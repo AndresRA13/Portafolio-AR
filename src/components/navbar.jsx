@@ -104,13 +104,13 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-screen w-full max-w-xs bg-black z-50 shadow-2xl md:hidden flex flex-col"
-              style={{ backgroundColor: '#000000', height: '100vh' }}
+              className="fixed top-0 right-0 h-screen w-full max-w-xs bg-white dark:bg-gray-950 z-50 shadow-2xl md:hidden flex flex-col border-l border-gray-200 dark:border-gray-800"
+              style={{ height: '100vh' }}
             >
               <div className="absolute top-6 right-6 z-10">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 text-white hover:text-gray-300 transition-colors"
+                  className="p-2 text-gray-800 dark:text-white hover:text-blue-500 dark:hover:text-gray-300 transition-colors"
                 >
                   <X size={32} />
                 </button>
@@ -125,8 +125,8 @@ const Navbar = () => {
                       onClick={() => setIsOpen(false)}
                       className={`text-2xl font-bold tracking-wide transition-colors ${
                         isActive(link.path)
-                          ? 'text-blue-500'
-                          : 'text-white hover:text-gray-300'
+                          ? 'text-blue-600 dark:text-blue-500'
+                          : 'text-gray-800 dark:text-gray-100 hover:text-blue-500 dark:hover:text-gray-300'
                       }`}
                     >
                       {link.name}
@@ -135,13 +135,13 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex justify-center gap-8">
-                  <a href="#" className="text-white hover:text-blue-500 transition-colors">
+                  <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                     <Linkedin size={28} />
                   </a>
-                  <a href="#" className="text-white hover:text-gray-300 transition-colors">
+                  <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                     <Github size={28} />
                   </a>
-                  <a href="#" className="text-white hover:text-blue-400 transition-colors">
+                  <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
                     <Mail size={28} />
                   </a>
                 </div>
