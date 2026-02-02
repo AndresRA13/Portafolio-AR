@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Terminal, Cpu, Globe, Layers, Zap } from 'lucide-react';
+import { Code, Database, Terminal, Cpu, Globe, Layers, Zap, Users, MessageSquare, Lightbulb, Search, Award, Target, Repeat } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -14,7 +14,7 @@ const Skills = () => {
         { name: 'JavaScript (ES6+)', level: 'Advanced', color: 'bg-yellow-500/10 text-yellow-700 dark:text-yellow-400' },
         { name: 'Tailwind CSS', level: 'Master', color: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400' },
         { name: 'Framer Motion', level: 'Advanced', color: 'bg-purple-500/10 text-purple-600 dark:text-purple-400' },
-        { name: 'TypeScript', level: 'Intermediate', color: 'bg-blue-600/10 text-blue-700 dark:text-blue-300' },
+        { name: 'CSS Puro', level: 'Intermediate', color: 'bg-blue-600/10 text-blue-700 dark:text-blue-300' },
       ],
     },
     {
@@ -26,7 +26,7 @@ const Skills = () => {
         { name: 'Node.js', level: 'Advanced', color: 'bg-green-500/10 text-green-600 dark:text-green-400' },
         { name: 'Express', level: 'Advanced', color: 'bg-gray-500/10 text-gray-600 dark:text-gray-400' },
         { name: 'MongoDB', level: 'Advanced', color: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' },
-        { name: 'PostgreSQL', level: 'Intermediate', color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400' },
+        { name: 'Mysql', level: 'Intermediate', color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400' },
         { name: 'Firebase', level: 'Advanced', color: 'bg-orange-500/10 text-orange-600 dark:text-orange-400' },
       ],
     },
@@ -40,9 +40,18 @@ const Skills = () => {
         { name: 'Docker', level: 'Intermediate', color: 'bg-blue-400/10 text-blue-500' },
         { name: 'Figma', level: 'Advanced', color: 'bg-pink-500/10 text-pink-600 dark:text-pink-400' },
         { name: 'Postman', level: 'Advanced', color: 'bg-orange-500/10 text-orange-600' },
-        { name: 'Unit Testing', level: 'Intermediate', color: 'bg-red-500/10 text-red-600 dark:text-red-400' },
+        { name: 'Balsamiq Mockups', level: 'Advanced', color: 'bg-red-500/10 text-red-600 dark:text-red-400' },
       ],
     },
+  ];
+
+  const professionalSkills = [
+    { name: 'Trabajo en Equipo', icon: <Users size={24} />, description: 'Colaboración efectiva en entornos ágiles.' },
+    { name: 'Comunicación', icon: <MessageSquare size={24} />, description: 'Capacidad para explicar conceptos técnicos claramente.' },
+    { name: 'Resolución de Problemas', icon: <Lightbulb size={24} />, description: 'Enfoque analítico para superar desafíos complejos.' },
+    { name: 'Pensamiento Crítico', icon: <Search size={24} />, description: 'Evaluación objetiva para mejores decisiones.' },
+    { name: 'Adaptabilidad', icon: <Repeat size={24} />, description: 'Flexibilidad ante nuevos requisitos y tecnologías.' },
+    { name: 'Orientación a Resultados', icon: <Target size={24} />, description: 'Enfoque en la eficiencia y la calidad final.' },
   ];
 
   return (
@@ -69,7 +78,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-32">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.id}
@@ -108,6 +117,49 @@ const Skills = () => {
                     <span className="text-[10px] uppercase opacity-70 tracking-tighter">{skill.level}</span>
                   </motion.div>
                 ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Soft Skills Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
+            Habilidades <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-blue-600">Profesionales</span>
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Cualidades interpersonales que fortalecen mi desempeño técnico y facilitan el éxito del proyecto.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {professionalSkills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group p-6 rounded-2xl bg-white dark:bg-gray-800/30 border border-gray-100 dark:border-white/5 hover:border-blue-500/30 transition-all duration-300"
+            >
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-xl bg-gray-50 dark:bg-gray-700/50 text-blue-500 dark:text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                  {skill.icon}
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {skill.name}
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 leading-snug">
+                    {skill.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
