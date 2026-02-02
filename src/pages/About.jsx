@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, MapPin, Calendar, Briefcase } from 'lucide-react';
+import { User, MapPin, Calendar, Briefcase, Code } from 'lucide-react';
 
 const About = () => {
   const stats = [
@@ -35,9 +35,29 @@ const About = () => {
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10 bg-gray-200 dark:bg-gray-800">
                {/* Placeholder for user image if they had one, using a gradient for now */}
-               <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center text-white/20 text-9xl font-bold">
-                 DEV
-               </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex flex-col items-center justify-center p-12">
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="p-6 rounded-3xl bg-linear-to-tr from-blue-500 to-purple-600 text-white shadow-2xl shadow-blue-500/20 mb-6"
+                  >
+                    <Code size={80} strokeWidth={1.5} />
+                  </motion.div>
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    className="text-center"
+                  >
+                    <span className="block text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      AR<span className="text-blue-500">Portfolio</span>
+                    </span>
+                    <span className="text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mt-2 block">
+                      Digital Solutions
+                    </span>
+                  </motion.div>
+                </div>
                {/* If user provided an image, we would use an img tag here. 
                    Since no specific image was provided for the profile, I'll keep it abstract/placeholder 
                    but styled nicely. */}
