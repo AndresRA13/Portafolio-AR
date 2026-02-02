@@ -66,7 +66,52 @@ const Projects = () => {
       demoLink: '#',
       githubLink: '#',
     },
+     {
+      id: 7,
+      title: 'E-Commerce Platform',
+      category: 'Full Stack',
+      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      description: 'Una plataforma de comercio electrónico completa con carrito de compras, pasarela de pagos, gestión de usuarios y panel de administración.',
+      technologies: ['React JS', 'firebase JS', 'Tailwind CSS', 'Paypal'],
+      demoLink: '#',
+      githubLink: '#',
+    },
+    {
+      id: 8,
+      title: 'Fitness Tracker',
+      category: 'Health',
+      image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      description: 'Plataforma para el seguimiento de rutinas de ejercicio, nutrición y objetivos de salud con visualización de progreso.',
+      technologies: ['React', 'Chart.js', 'Firebase Auth', 'Tailwind'],
+      demoLink: '#',
+      githubLink: '#',
+    },
+    {
+      id: 9,
+      title: 'Travel Agency Site',
+      category: 'Business',
+      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8df0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      description: 'Sitio web para una agencia de viajes con catálogo de destinos, reserva de tours y reseñas de clientes.',
+      technologies: ['Astro', 'React', 'Cloudinary', 'Tailwind'],
+      demoLink: '#',
+      githubLink: '#',
+    },
   ];
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
+
+  // Pagination Logic
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    // Smooth scroll to projects section
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen pt-24 pb-12 bg-gray-50 dark:bg-[#0f172a] text-gray-900 dark:text-white">
@@ -84,13 +129,16 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {currentProjects.map((project) => (
             <motion.div
               key={project.id}
               layoutId={`project-card-${project.id}`}
               onClick={() => setSelectedProject(project)}
               whileHover={{ y: -10 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
               className="cursor-pointer group rounded-2xl overflow-hidden bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
             >
               <div className="relative h-48 overflow-hidden">
@@ -117,6 +165,47 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-2 mt-8 mb-12">
+            <button
+              onClick={() => paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-sm"
+            >
+              <span className="sr-only">Anterior</span>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i + 1}
+                onClick={() => paginate(i + 1)}
+                className={`w-10 h-10 rounded-lg font-medium transition-all duration-300 ${
+                  currentPage === i + 1
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900'
+                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700'
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+
+            <button
+              onClick={() => paginate(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-sm"
+            >
+              <span className="sr-only">Siguiente</span>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        )}
 
         {/* Project Modal */}
         {selectedProject && (
