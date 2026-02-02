@@ -6,41 +6,41 @@ const Skills = () => {
   const skillCategories = [
     {
       id: 'frontend',
-      title: 'Frontend Universe',
+      title: 'Frontend Architecture',
       icon: <Layers size={32} />,
-      description: 'Creando experiencias visuales cautivadoras.',
+      description: 'Construyendo interfaces modernas, rápidas y accesibles.',
       skills: [
-        { name: 'React', level: 95, color: 'from-blue-400 to-blue-600' },
-        { name: 'JavaScript', level: 90, color: 'from-yellow-400 to-yellow-600' },
-        { name: 'Tailwind CSS', level: 95, color: 'from-cyan-400 to-cyan-600' },
-        { name: 'Framer Motion', level: 85, color: 'from-purple-400 to-purple-600' },
-        { name: 'Next.js', level: 80, color: 'from-gray-600 to-gray-900' },
+        { name: 'React', level: 'Master', color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400' },
+        { name: 'JavaScript (ES6+)', level: 'Advanced', color: 'bg-yellow-500/10 text-yellow-700 dark:text-yellow-400' },
+        { name: 'Tailwind CSS', level: 'Master', color: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400' },
+        { name: 'Framer Motion', level: 'Advanced', color: 'bg-purple-500/10 text-purple-600 dark:text-purple-400' },
+        { name: 'TypeScript', level: 'Intermediate', color: 'bg-blue-600/10 text-blue-700 dark:text-blue-300' },
       ],
     },
     {
       id: 'backend',
-      title: 'Backend Core',
+      title: 'Backend & Infrastructure',
       icon: <Database size={32} />,
-      description: 'Arquitecturas robustas y escalables.',
+      description: 'Sistemas escalables y gestión eficiente de datos.',
       skills: [
-        { name: 'Node.js', level: 85, color: 'from-green-400 to-green-600' },
-        { name: 'Express', level: 85, color: 'from-gray-400 to-gray-600' },
-        { name: 'MongoDB', level: 80, color: 'from-green-500 to-green-700' },
-        { name: 'PostgreSQL', level: 75, color: 'from-blue-500 to-blue-700' },
-        { name: 'GraphQL', level: 70, color: 'from-pink-400 to-pink-600' },
+        { name: 'Node.js', level: 'Advanced', color: 'bg-green-500/10 text-green-600 dark:text-green-400' },
+        { name: 'Express', level: 'Advanced', color: 'bg-gray-500/10 text-gray-600 dark:text-gray-400' },
+        { name: 'MongoDB', level: 'Advanced', color: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' },
+        { name: 'PostgreSQL', level: 'Intermediate', color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400' },
+        { name: 'Firebase', level: 'Advanced', color: 'bg-orange-500/10 text-orange-600 dark:text-orange-400' },
       ],
     },
     {
       id: 'tools',
-      title: 'DevOps & Tools',
+      title: 'Workflow & UI/UX',
       icon: <Terminal size={32} />,
-      description: 'Herramientas que potencian el flujo de trabajo.',
+      description: 'Herramientas de productividad y diseño centrado en el usuario.',
       skills: [
-        { name: 'Git & GitHub', level: 90, color: 'from-orange-400 to-orange-600' },
-        { name: 'Docker', level: 70, color: 'from-blue-400 to-blue-600' },
-        { name: 'AWS', level: 60, color: 'from-yellow-500 to-yellow-700' },
-        { name: 'Figma', level: 80, color: 'from-purple-400 to-purple-600' },
-        { name: 'Testing', level: 75, color: 'from-red-400 to-red-600' },
+        { name: 'Git & GitHub', level: 'Master', color: 'bg-orange-600/10 text-orange-700 dark:text-orange-400' },
+        { name: 'Docker', level: 'Intermediate', color: 'bg-blue-400/10 text-blue-500' },
+        { name: 'Figma', level: 'Advanced', color: 'bg-pink-500/10 text-pink-600 dark:text-pink-400' },
+        { name: 'Postman', level: 'Advanced', color: 'bg-orange-500/10 text-orange-600' },
+        { name: 'Unit Testing', level: 'Intermediate', color: 'bg-red-500/10 text-red-600 dark:text-red-400' },
       ],
     },
   ];
@@ -49,8 +49,8 @@ const Skills = () => {
     <div className="min-h-screen py-24 bg-gray-50 dark:bg-[#0f172a] text-gray-900 dark:text-white relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-64 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 -left-64 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -62,10 +62,10 @@ const Skills = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Arsenal <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Tecnológico</span>
+            Especialización <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-purple-600">Técnica</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Domino un stack moderno diseñado para construir aplicaciones web rápidas, seguras y escalables.
+            En lugar de porcentajes arbitrarios, presento mi stack basado en mi capacidad de ejecución y dominio real de cada herramienta.
           </p>
         </motion.div>
 
@@ -77,43 +77,37 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-100 dark:border-gray-700 hover:border-blue-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
+              className="bg-white dark:bg-gray-800/40 backdrop-blur-md rounded-3xl p-8 border border-gray-100 dark:border-white/5 shadow-xl shadow-gray-200/50 dark:shadow-none"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-transparent dark:from-white/5 dark:to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              
-              <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 shadow-inner group-hover:scale-110 transition-transform duration-500">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400">
                   {category.icon}
                 </div>
-                
-                <h3 className="text-2xl font-bold mb-2">{category.title}</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-sm mb-8">
-                  {category.description}
-                </p>
-
-                <div className="space-y-6">
-                  {category.skills.map((skill, i) => (
-                    <div key={skill.name} className="relative">
-                      <div className="flex justify-between items-end mb-2">
-                        <span className="font-semibold text-gray-700 dark:text-gray-200">
-                          {skill.name}
-                        </span>
-                        <span className="text-xs font-mono text-gray-500 dark:text-gray-400">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="h-2 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          transition={{ duration: 1, delay: 0.5 + (i * 0.1), ease: "easeOut" }}
-                          viewport={{ once: true }}
-                          className={`h-full rounded-full bg-gradient-to-r ${skill.color}`}
-                        />
-                      </div>
-                    </div>
-                  ))}
+                <div>
+                  <h3 className="text-xl font-bold">{category.title}</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold">Tecnologías Core</p>
                 </div>
+              </div>
+              
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-8 leading-relaxed">
+                {category.description}
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+                {category.skills.map((skill, i) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.1 * i }}
+                    whileHover={{ scale: 1.05 }}
+                    className={`px-4 py-2 rounded-xl text-sm font-medium border border-transparent hover:border-current/20 transition-all cursor-default flex items-center gap-2 ${skill.color}`}
+                  >
+                    <span>{skill.name}</span>
+                    <span className="w-1 h-1 rounded-full bg-current opacity-40"></span>
+                    <span className="text-[10px] uppercase opacity-70 tracking-tighter">{skill.level}</span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}

@@ -4,9 +4,9 @@ import { User, MapPin, Calendar, Briefcase, Code } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { label: 'Años de Experiencia', value: '5+' },
-    { label: 'Proyectos Completados', value: '50+' },
-    { label: 'Clientes Felices', value: '30+' },
+    { label: 'Años de Experiencia', value: '1+' },
+    { label: 'Proyectos Completados', value: '7+' },
+    { label: 'Clientes Felices', value: '5+' },
   ];
 
   return (
@@ -85,15 +85,15 @@ const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
                 <User className="text-blue-500" size={20} />
-                <span>Nombre: Juan Pérez</span>
+                <span>Nombre: Andres Rojas</span>
               </div>
               <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
                 <MapPin className="text-blue-500" size={20} />
-                <span>Ubicación: Ciudad, País</span>
+                <span>Ubicación: Colombia</span>
               </div>
               <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
                 <Calendar className="text-blue-500" size={20} />
-                <span>Edad: 28 Años</span>
+                <span>Edad: 21 Años</span>
               </div>
               <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
                 <Briefcase className="text-blue-500" size={20} />
