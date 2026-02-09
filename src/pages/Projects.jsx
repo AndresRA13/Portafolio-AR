@@ -39,7 +39,7 @@ const Projects = () => {
     {
       id: 4,
       title: 'DrawyScanner',
-      category: 'Fintech',
+      category: 'Web App',
       image: 'https://i.ibb.co/nqfyy0KS/image.png',
       description: 'Panel de control para visualización de datos financieros, con gráficos interactivos, reportes y análisis de tendencias.',
       technologies: ['Angular', 'D3.js', 'Express', 'PostgreSQL'],
