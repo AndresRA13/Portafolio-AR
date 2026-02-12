@@ -97,7 +97,7 @@ const Projects = () => {
       githubLink: '#',
     },
   ];
-
+  const projectsRef = React.useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 6;
 
@@ -109,12 +109,14 @@ const Projects = () => {
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-    // Smooth scroll to projects section
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Scroll to the top of the projects container instead of the window
+    if (projectsRef.current) {
+      projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-12 bg-gray-50 dark:bg-[#0f172a] text-gray-900 dark:text-white">
+    <div ref={projectsRef} className="min-h-screen pt-24 pb-12 bg-gray-50 dark:bg-[#0f172a] text-gray-900 dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -221,20 +223,26 @@ const Projects = () => {
                 <X size={24} />
               </button>
               
-              <div className="relative h-64 sm:h-80">
+              <div className="relative aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-full object-cover"
+                  className="max-w-full max-h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-8">
-                  <div className="text-sm font-semibold tracking-wide text-blue-400 uppercase mb-2">
-                    {selectedProject.category}
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-white">
-                    {selectedProject.title}
-                  </h2>
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 p-6 sm:p-8 w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <div className="text-sm font-semibold tracking-widest text-blue-400 uppercase mb-2">
+                      {selectedProject.category}
+                    </div>
+                    <h2 className="text-2xl sm:text-4xl font-bold text-white leading-tight">
+                      {selectedProject.title}
+                    </h2>
+                  </motion.div>
                 </div>
               </div>
 

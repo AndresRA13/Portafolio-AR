@@ -10,16 +10,40 @@ const Contact = () => {
     message: '',
   });
 
+  const [status, setStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log('Form submitted:', formData);
-    alert('¡Mensaje enviado con éxito! (Simulación)');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mjgeygqa', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          console.error('Formspree errors:', data.errors.map(error => error.message).join(', '));
+        }
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -54,8 +78,8 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-lg font-semibold">Email</h4>
-                <p className="text-gray-600 dark:text-gray-400">contacto@ejemplo.com</p>
-                <p className="text-gray-600 dark:text-gray-400">soporte@ejemplo.com</p>
+                <p className="text-gray-600 dark:text-gray-400">rojasaguileraandres13@gmail.com</p>
+                <p className="text-gray-600 dark:text-gray-400">arktech365@gmail.com</p>
               </div>
             </div>
 
@@ -65,8 +89,8 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-lg font-semibold">Teléfono</h4>
-                <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
-                <p className="text-gray-600 dark:text-gray-400">Lunes - Viernes, 9am - 6pm</p>
+                <p className="text-gray-600 dark:text-gray-400">+57 3138850922</p>
+                <p className="text-gray-600 dark:text-gray-400">Lunes - Viernes, 8am - 6pm</p>
               </div>
             </div>
 
@@ -76,17 +100,24 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-lg font-semibold">Ubicación</h4>
-                <p className="text-gray-600 dark:text-gray-400">Calle Principal 123</p>
-                <p className="text-gray-600 dark:text-gray-400">Ciudad Tecnológica, CP 12345</p>
+                <p className="text-gray-600 dark:text-gray-400">Cajamarca, Tolima</p>
+                <p className="text-gray-600 dark:text-gray-400">Colombia</p>
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="w-full h-64 rounded-2xl overflow-hidden bg-gray-200 dark:bg-gray-800 mt-8 relative">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                    <span className="flex items-center gap-2"><MapPin size={20}/> Mapa Interactivo</span>
-                </div>
-                {/* In a real app, embed Google Maps iframe here */}
+            {/* Google Maps Interactive */}
+            <div className="w-full h-80 rounded-2xl overflow-hidden bg-gray-200 dark:bg-gray-800 mt-8 relative shadow-inner border border-gray-200 dark:border-gray-700">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15915.263592881!2d-75.43153595!3d4.4402682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c7f9df88f11d%3A0xc6ad50e263c965e6!2sCajamarca%2C%20Tolima!5e0!3m2!1ses!2sco!4v1707747300000!5m2!1ses!2sco" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Cajamarca, Tolima"
+                  className="grayscale dark:invert-[0.9] dark:hue-rotate-180 opacity-80 hover:opacity-100 transition-opacity duration-500"
+                ></iframe>
             </div>
           </motion.div>
 
@@ -166,11 +197,44 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+                disabled={status === 'submitting'}
+                className={`w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                <Send size={20} />
-                Enviar Mensaje
+                {status === 'submitting' ? (
+                  <span className="flex items-center gap-2">
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Enviando...
+                  </span>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Enviar Mensaje
+                  </>
+                )}
               </button>
+
+              {status === 'success' && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-center text-green-600 dark:text-green-400 font-medium"
+                >
+                  ¡Mensaje enviado con éxito! Te responderé pronto.
+                </motion.p>
+              )}
+
+              {status === 'error' && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-center text-red-600 dark:text-red-400 font-medium"
+                >
+                  Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.
+                </motion.p>
+              )}
             </form>
           </motion.div>
         </div>
