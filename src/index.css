@@ -162,3 +162,11 @@ body {
     animation-delay: 4s;
   }
 }
+
+/* Hide floating navbar completely when a modal dialog is open */
+body.modal-open header {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-100%) !important;
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
+}

@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, X, Search, Sparkles, Filter, Eye, Layers } from 'lucide-react';
+import { ExternalLink, Github, X, Search, Sparkles, Filter, Eye, Layers, CheckCircle2, Code2, Globe } from 'lucide-react';
 
 const projectsList = [
   {
@@ -115,6 +116,30 @@ const Projects = () => {
 
   const projectsPerPage = 6;
 
+  // Lock body scroll, hide navbar & listen to Escape key when modal is active
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+    }
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedProject(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedProject]);
+
   // Filter logic
   const filteredProjects = projectsList.filter((proj) => {
     const matchesCategory = activeCategory === 'Todos' || proj.category === activeCategory;
@@ -166,7 +191,7 @@ const Projects = () => {
                 <button
                   key={cat}
                   onClick={() => handleCategoryChange(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                     activeCategory === cat
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md'
                       : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
@@ -264,30 +289,26 @@ const Projects = () => {
 
                     {/* Action Links */}
                     <div className="flex items-center justify-between pt-3 border-t border-gray-200/60 dark:border-white/10 text-xs font-bold">
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        className="inline-flex items-center gap-1.5 text-blue-600 dark:text-cyan-400 hover:underline cursor-pointer"
+                      >
+                        <span>Detalles</span>
+                        <Eye size={14} />
+                      </button>
+
                       {project.demoLink !== '#' ? (
                         <a
                           href={project.demoLink}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 text-blue-600 dark:text-cyan-400 hover:underline"
+                          className="inline-flex items-center gap-1.5 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400"
                         >
-                          <span>Demo En Vivo</span>
+                          <span>Demo</span>
                           <ExternalLink size={14} />
                         </a>
                       ) : (
-                        <span className="text-gray-400 font-normal">Demo bajo solicitud</span>
-                      )}
-
-                      {project.githubLink !== '#' && (
-                        <a
-                          href={project.githubLink}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400"
-                        >
-                          <Github size={14} />
-                          <span>Código</span>
-                        </a>
+                        <span className="text-gray-400 font-normal">Privado</span>
                       )}
                     </div>
                   </div>
@@ -319,7 +340,7 @@ const Projects = () => {
                   setCurrentPage(i + 1);
                   projectsRef.current?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className={`w-10 h-10 rounded-xl text-xs font-bold transition-all ${
+                className={`w-10 h-10 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                   currentPage === i + 1
                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30'
                     : 'glass-card text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800'
@@ -331,102 +352,162 @@ const Projects = () => {
           </div>
         )}
 
-        {/* PROJECT MODAL DIALOG */}
+      </div>
+
+      {/* PORTAL MODAL RENDERED AT BODY LEVEL (Z-INDEX 99999 OVER NAVBAR) */}
+      {selectedProject && createPortal(
         <AnimatePresence>
-          {selectedProject && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                className="bg-white dark:bg-[#0c101c] w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 relative max-h-[90vh] flex flex-col"
-              >
-                {/* Modal Header Image */}
-                <div className="relative aspect-video w-full overflow-hidden bg-gray-900 shrink-0">
+          <div className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+            
+            {/* Dark Blur Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="fixed inset-0 bg-black/90 backdrop-blur-xl z-[99999]"
+            />
+
+            {/* Modal Dialog Box */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 30 }}
+              transition={{ type: "spring", stiffness: 350, damping: 28 }}
+              className="relative z-[100000] bg-white dark:bg-[#0c101d] w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/15 my-auto max-h-[90vh] flex flex-col"
+            >
+              
+              {/* Modal Fixed Top Header Bar */}
+              <div className="px-6 py-4 bg-gray-100/90 dark:bg-[#090d16]/90 backdrop-blur-md border-b border-gray-200/80 dark:border-white/10 flex items-center justify-between shrink-0">
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-cyan-400 text-xs font-mono font-bold uppercase border border-blue-500/20">
+                    {selectedProject.category}
+                  </span>
+                  <h3 className="text-base sm:text-xl font-extrabold text-gray-900 dark:text-white truncate max-w-[200px] sm:max-w-md">
+                    {selectedProject.title}
+                  </h3>
+                </div>
+
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="p-2 rounded-xl bg-gray-200/80 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors flex items-center gap-1.5 text-xs font-bold cursor-pointer"
+                  title="Cerrar modal (Esc)"
+                >
+                  <span>Cerrar</span>
+                  <X size={16} />
+                </button>
+              </div>
+
+              {/* Scrollable Body Content */}
+              <div className="p-5 sm:p-8 overflow-y-auto space-y-6 flex-1">
+                
+                {/* High Quality Project Showcase Image */}
+                <div className="relative aspect-video w-full max-h-[380px] rounded-2xl overflow-hidden bg-gray-900 border border-gray-200/60 dark:border-white/10 shadow-lg group">
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
-                  
-                  <button
-                    onClick={() => setSelectedProject(null)}
-                    className="absolute top-4 right-4 p-2.5 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors z-20 cursor-pointer"
-                  >
-                    <X size={20} />
-                  </button>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent opacity-40"></div>
+                </div>
 
-                  <div className="absolute bottom-6 left-6 right-6 space-y-1">
-                    <span className="px-3 py-1 rounded-full bg-blue-500/20 text-cyan-400 text-xs font-mono font-bold uppercase border border-cyan-500/30 inline-block mb-2">
-                      {selectedProject.category}
-                    </span>
-                    <h3 className="text-2xl sm:text-4xl font-extrabold text-white">
-                      {selectedProject.title}
-                    </h3>
+                {/* Description */}
+                <div className="space-y-2">
+                  <h4 className="text-xs font-mono font-bold uppercase text-gray-500 dark:text-gray-400 tracking-wider flex items-center gap-2">
+                    <Layers size={14} className="text-blue-500" />
+                    <span>Descripción del Proyecto</span>
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
+                    {selectedProject.description}
+                  </p>
+                </div>
+
+                {/* Technologies */}
+                <div className="space-y-3">
+                  <h4 className="text-xs font-mono font-bold uppercase text-gray-500 dark:text-gray-400 tracking-wider flex items-center gap-2">
+                    <Code2 size={14} className="text-purple-500" />
+                    <span>Tecnologías Empleadas</span>
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.technologies.map((t) => (
+                      <span
+                        key={t}
+                        className="px-3.5 py-1.5 rounded-xl bg-blue-500/10 text-blue-600 dark:text-cyan-400 text-xs font-semibold border border-blue-500/20"
+                      >
+                        {t}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                {/* Modal Content */}
-                <div className="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1">
-                  <div>
-                    <h4 className="text-sm font-mono font-bold uppercase text-gray-500 dark:text-gray-400 tracking-wider mb-2">
-                      Descripción del Proyecto
-                    </h4>
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
-                      {selectedProject.description}
-                    </p>
+                {/* Features List */}
+                <div className="p-4 rounded-2xl bg-gray-50 dark:bg-gray-900/60 border border-gray-200/60 dark:border-white/5 space-y-2">
+                  <div className="text-xs font-mono font-bold text-gray-700 dark:text-gray-300 uppercase">
+                    Puntos Clave del Software
                   </div>
-
-                  <div>
-                    <h4 className="text-sm font-mono font-bold uppercase text-gray-500 dark:text-gray-400 tracking-wider mb-3">
-                      Tecnologías Empleadas
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((t) => (
-                        <span
-                          key={t}
-                          className="px-3 py-1.5 rounded-xl bg-blue-500/10 text-blue-600 dark:text-cyan-400 text-xs font-bold border border-blue-500/20"
-                        >
-                          {t}
-                        </span>
-                      ))}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
+                      <span>Diseño Responsive Total (Mobile/Tablet/PC)</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
+                      <span>Arquitectura limpia y componentes modulares</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
+                      <span>Despliegue activo y producción en vivo</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
+                      <span>Optimización SEO y rendimiento Lighthouse</span>
                     </div>
                   </div>
-
-                  {/* Actions */}
-                  <div className="pt-4 border-t border-gray-200 dark:border-white/10 flex flex-col sm:flex-row gap-4">
-                    {selectedProject.demoLink !== '#' && (
-                      <a
-                        href={selectedProject.demoLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-sm text-center shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
-                      >
-                        <ExternalLink size={18} />
-                        Visitar Sitio Web
-                      </a>
-                    )}
-
-                    {selectedProject.githubLink !== '#' && (
-                      <a
-                        href={selectedProject.githubLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 py-3.5 rounded-xl glass-card font-bold text-sm text-gray-800 dark:text-gray-200 text-center flex items-center justify-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-800"
-                      >
-                        <Github size={18} />
-                        Ver en GitHub
-                      </a>
-                    )}
-                  </div>
                 </div>
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
 
-      </div>
+              </div>
+
+              {/* Modal Fixed Footer Action Bar */}
+              <div className="p-4 sm:p-6 bg-gray-100/90 dark:bg-[#090d16]/90 backdrop-blur-md border-t border-gray-200/80 dark:border-white/10 flex flex-col sm:flex-row gap-3 shrink-0">
+                {selectedProject.demoLink !== '#' ? (
+                  <a
+                    href={selectedProject.demoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-sm text-center shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2"
+                  >
+                    <Globe size={18} />
+                    <span>Visitar Sitio Web (Demo)</span>
+                    <ExternalLink size={14} />
+                  </a>
+                ) : (
+                  <div className="flex-1 py-3 rounded-xl bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-400 font-semibold text-sm text-center">
+                    Demo Privado
+                  </div>
+                )}
+
+                {selectedProject.githubLink !== '#' ? (
+                  <a
+                    href={selectedProject.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 py-3 rounded-xl glass-card font-bold text-sm text-gray-800 dark:text-gray-200 text-center flex items-center justify-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+                  >
+                    <Github size={18} />
+                    <span>Ver Código en GitHub</span>
+                  </a>
+                ) : (
+                  <div className="flex-1 py-3 rounded-xl glass-card text-gray-400 font-normal text-xs text-center flex items-center justify-center">
+                    Repositorio privado
+                  </div>
+                )}
+              </div>
+
+            </motion.div>
+          </div>
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   );
 };
