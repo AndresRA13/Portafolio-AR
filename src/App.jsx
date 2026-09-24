@@ -47,7 +47,7 @@ const App = () => {
 
   return (
     <ThemeProvider>
-      <Router basename={import.meta.env.BASE_URL}>
+      <Router basename={import.meta.env.BASE_URL === './' ? '/' : import.meta.env.BASE_URL}>
         <ScrollToTop />
         <BackgroundEffects />
         {loading ? (
