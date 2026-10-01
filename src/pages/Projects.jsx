@@ -8,7 +8,7 @@ const projectsList = [
     id: 1,
     title: 'PSG Shop — E-Commerce',
     category: 'Full Stack',
-    image: 'https://i.ibb.co/svBVMJ5y/image.png',
+    image: 'https://i.ibb.co/rK0zpfqh/image.png',
     description: 'Plataforma completa de comercio electrónico con carrito de compras reactivo, gestión de usuarios, pasarela de pagos integrada con PayPal y panel de administración.',
     technologies: ['React JS', 'Firebase', 'Tailwind CSS', 'PayPal API'],
     demoLink: 'https://andresra13.github.io/psg-shop/',
@@ -17,12 +17,12 @@ const projectsList = [
   },
   {
     id: 6,
-    title: 'ARKGPT — Assistant AI',
-    category: 'AI & Tools',
-    image: 'https://i.ibb.co/21SrCgKd/image.png',
+    title: 'Moto Fix',
+    category: 'Full Stack',
+    image: 'https://i.ibb.co/Xrnw0RNp/image.png',
     description: 'Plataforma impulsada por modelos de inteligencia artificial para generación de contenido, asistencia inteligente en código y chat en tiempo real.',
     technologies: ['Next.js', 'OpenAI API', 'Tailwind CSS', 'Prisma'],
-    demoLink: 'https://arkgpt.netlify.app/',
+    demoLink: 'https://potter-motos.netlify.app/',
     githubLink: '#',
     featured: true,
   },
@@ -30,7 +30,7 @@ const projectsList = [
     id: 2,
     title: 'CineTV — Streaming Hub',
     category: 'Entertainment',
-    image: 'https://i.ibb.co/ZzJJP98d/image.png',
+    image: 'https://i.ibb.co/SgKhPN8/image.png',
     description: 'Plataforma multimedia para exploración de películas y series de televisión con trailers en vivo, listados por tendencia y buscador en tiempo real.',
     technologies: ['Vue.js', 'Firebase', 'Tailwind CSS', 'TMDB API'],
     demoLink: 'https://cinemovietv.netlify.app/',
@@ -39,12 +39,12 @@ const projectsList = [
   },
   {
     id: 3,
-    title: 'MyADM — Interactive Studio',
-    category: 'Design & UI',
-    image: 'https://i.ibb.co/4nbjSSpz/image.png',
-    description: 'Sitio web de portafolio y agencia de diseño visual con efectos tridimensionales, animaciones fluidas y maquetación de alto nivel.',
+    title: 'Zenly Admin',
+    category: 'PWA & Mobile',
+    image: 'https://i.ibb.co/G4Tzkng1/image.png',
+    description: 'Sitio web de portafolio y agencia de diseño visual con efectos tridimensionales, animaciones fluidas y maquetación de alto nive}l.',
     technologies: ['React', 'Framer Motion', 'GSAP', 'Tailwind CSS'],
-    demoLink: 'https://myadm.netlify.app/',
+    demoLink: 'https://zenlyadmin.netlify.app/',
     githubLink: '#',
     featured: false,
   },
@@ -52,7 +52,7 @@ const projectsList = [
     id: 4,
     title: 'DrawyScanner — PWA',
     category: 'PWA & Mobile',
-    image: 'https://i.ibb.co/nqfyy0KS/image.png',
+    image: 'https://i.ibb.co/XxyPP3XH/image.png',
     description: 'Aplicación web progresiva (PWA) para escaneo digital, procesamiento gráfico e interacción táctil optimizada para dispositivos móviles.',
     technologies: ['JavaScript ES6+', 'HTML5 Canvas', 'CSS3', 'PWA ServiceWorker'],
     demoLink: 'https://drawyscanner.netlify.app/',
@@ -62,8 +62,8 @@ const projectsList = [
   {
     id: 5,
     title: 'Todli — Task Manager',
-    category: 'Full Stack',
-    image: 'https://i.ibb.co/v5vwP9H/image.png',
+    category: 'Landing',
+    image: 'https://i.postimg.cc/VkBfpwd2/image.png',
     description: 'Gestor dinámico de tareas y metas personales con tableros interactivos, recordatorios y estado persistente en la nube.',
     technologies: ['React', 'Firebase Auth', 'Tailwind CSS', 'Node.js'],
     demoLink: 'https://todli.netlify.app/',
@@ -74,7 +74,7 @@ const projectsList = [
     id: 7,
     title: 'Zypno Notes',
     category: 'PWA & Mobile',
-    image: 'https://i.ibb.co/VY5RyGKL/image.png',
+    image: 'https://i.postimg.cc/1t104W76/image.png',
     description: 'Aplicación ultra rápida para toma de notas con formato rich text, categorización por etiquetas y sincronización instantánea.',
     technologies: ['JavaScript', 'Firebase', 'CSS3', 'LocalStorage'],
     demoLink: 'https://zypno.netlify.app/',
@@ -83,29 +83,51 @@ const projectsList = [
   },
   {
     id: 8,
-    title: 'Fitness Tracker Dashboard',
-    category: 'Full Stack',
-    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=80',
+    title: 'Oryx Player',
+    category: 'Mobile APK',
+    image: 'https://i.postimg.cc/KvtNL3gc/image.png',
     description: 'Dashboard interactivo para monitoreo de rutinas deportivas, consumo calórico y gráficos estadísticos de progreso semanal.',
     technologies: ['React', 'Chart.js', 'Tailwind CSS', 'Firebase'],
-    demoLink: '#',
+    demoLink: 'https://oryxplayer.netlify.app/',
     githubLink: '#',
     featured: false,
   },
   {
     id: 9,
-    title: 'Travel Agency Platform',
-    category: 'Full Stack',
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8df0?auto=format&fit=crop&w=1000&q=80',
+    title: 'Saron Perfums',
+    category: 'PWA & Mobile',
+    image: 'https://i.postimg.cc/mgMzrKhD/image.png',
     description: 'Portal de reserva de itinerarios de viajes con integración de mapas interactivos, catálogo de experiencias y testimonios.',
     technologies: ['Astro', 'React', 'Cloudinary', 'Tailwind'],
-    demoLink: '#',
+    demoLink: 'https://saron-perfums.netlify.app/',
+    githubLink: '#',
+    featured: false,
+  },
+  {
+    id: 10,
+    title: 'PortFolio AR',
+    category: 'Landing',
+    image: 'https://i.postimg.cc/BZr1GqnJ/image.png',
+    description: 'Portal de reserva de itinerarios de viajes con integración de mapas interactivos, catálogo de experiencias y testimonios.',
+    technologies: ['Astro', 'React', 'Cloudinary', 'Tailwind'],
+    demoLink: 'https://andresra13.github.io/Portafolio-AR/',
+    githubLink: '#',
+    featured: false,
+  },
+   {
+    id: 11,
+    title: 'ArkTech Labs',
+    category: 'Landing',
+    image: 'https://i.postimg.cc/BZKXpdBW/image.png',
+    description: 'Portal de reserva de itinerarios de viajes con integración de mapas interactivos, catálogo de experiencias y testimonios.',
+    technologies: ['Astro', 'React', 'Cloudinary', 'Tailwind'],
+    demoLink: 'https://arktechlabs.netlify.app/',
     githubLink: '#',
     featured: false,
   },
 ];
 
-const categories = ['Todos', 'Full Stack', 'AI & Tools', 'Entertainment', 'PWA & Mobile', 'Design & UI'];
+const categories = ['Todos', 'Full Stack', 'Landing', 'Entertainment', 'PWA & Mobile', 'Mobile APK'];
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -143,8 +165,8 @@ const Projects = () => {
   // Filter logic
   const filteredProjects = projectsList.filter((proj) => {
     const matchesCategory = activeCategory === 'Todos' || proj.category === activeCategory;
-    const matchesSearch = proj.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          proj.technologies.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
+    const matchesSearch = proj.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      proj.technologies.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
@@ -161,7 +183,7 @@ const Projects = () => {
   return (
     <section ref={projectsRef} className="min-h-screen py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -184,18 +206,17 @@ const Projects = () => {
         {/* Filter and Search Bar */}
         <div className="mb-12 space-y-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            
+
             {/* Category Filter Pills */}
             <div className="flex flex-wrap justify-center gap-2 p-1.5 rounded-2xl glass-card border border-gray-200/80 dark:border-white/10 w-full md:w-auto">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => handleCategoryChange(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                    activeCategory === cat
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md'
-                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                  }`}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeCategory === cat
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                    }`}
                 >
                   {cat}
                 </button>
@@ -239,7 +260,7 @@ const Projects = () => {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                  
+
                   {/* Category & Featured Badge */}
                   <div className="absolute top-4 left-4 flex gap-2">
                     <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white font-mono text-[10px] font-bold uppercase tracking-wider border border-white/20">
@@ -340,11 +361,10 @@ const Projects = () => {
                   setCurrentPage(i + 1);
                   projectsRef.current?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className={`w-10 h-10 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                  currentPage === i + 1
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30'
-                    : 'glass-card text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800'
-                }`}
+                className={`w-10 h-10 rounded-xl text-xs font-bold transition-all cursor-pointer ${currentPage === i + 1
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30'
+                  : 'glass-card text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800'
+                  }`}
               >
                 {i + 1}
               </button>
@@ -358,7 +378,7 @@ const Projects = () => {
       {selectedProject && createPortal(
         <AnimatePresence>
           <div className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-            
+
             {/* Dark Blur Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -376,7 +396,7 @@ const Projects = () => {
               transition={{ type: "spring", stiffness: 350, damping: 28 }}
               className="relative z-[100000] bg-white dark:bg-[#0c101d] w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/15 my-auto max-h-[90vh] flex flex-col"
             >
-              
+
               {/* Modal Fixed Top Header Bar */}
               <div className="px-6 py-4 bg-gray-100/90 dark:bg-[#090d16]/90 backdrop-blur-md border-b border-gray-200/80 dark:border-white/10 flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-3">
@@ -400,7 +420,7 @@ const Projects = () => {
 
               {/* Scrollable Body Content */}
               <div className="p-5 sm:p-8 overflow-y-auto space-y-6 flex-1">
-                
+
                 {/* High Quality Project Showcase Image */}
                 <div className="relative aspect-video w-full max-h-[380px] rounded-2xl overflow-hidden bg-gray-900 border border-gray-200/60 dark:border-white/10 shadow-lg group">
                   <img
