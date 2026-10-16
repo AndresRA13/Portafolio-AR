@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ArrowRight, Github, Linkedin, Mail, Code, Terminal, Cpu, 
-  Sparkles, CheckCircle2, Zap, Layers, Globe, Shield, Star, 
+import {
+  ArrowRight, Github, Linkedin, Mail, Code, Terminal, Cpu,
+  Sparkles, CheckCircle2, Zap, Layers, Globe, Shield, Star,
   ChevronRight, ExternalLink, Flame
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -24,11 +24,12 @@ const techMarquee = [
   { name: "React 19", color: "from-cyan-400 to-blue-500" },
   { name: "Node.js", color: "from-emerald-400 to-green-600" },
   { name: "Tailwind CSS v4", color: "from-teal-400 to-cyan-500" },
-  { name: "TypeScript", color: "from-blue-500 to-indigo-600" },
-  { name: "Next.js", color: "from-gray-700 to-black dark:from-gray-200 dark:to-white" },
+  { name: "Javascript", color: "from-blue-500 to-indigo-600" },
+  { name: "MySQL", color: "from-gray-700 to-black dark:from-gray-200 dark:to-white" },
   { name: "MongoDB", color: "from-green-500 to-emerald-700" },
   { name: "Firebase", color: "from-amber-400 to-orange-500" },
-  { name: "Framer Motion", color: "from-purple-500 to-pink-500" },
+  { name: "Git", color: "from-purple-500 to-pink-500" },
+  { name: "Github", color: "from-gray-600 to-gray-800" },
   { name: "Express.js", color: "from-gray-600 to-gray-800" },
 ];
 
@@ -49,16 +50,16 @@ const Home = () => {
       <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center relative py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            
+
             {/* Left Column - Hero Content */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="lg:col-span-7 text-center lg:text-left space-y-6"
             >
               {/* Availability Badge */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
@@ -70,7 +71,7 @@ const Home = () => {
                 </span>
                 <span>Disponible para proyectos & empleo remoto</span>
               </motion.div>
-              
+
               {/* Main Heading */}
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
                 Construyendo el <br />
@@ -78,7 +79,7 @@ const Home = () => {
                   Futuro Digital
                 </span>
               </h1>
-              
+
               {/* Dynamic Animated Role */}
               <div className="h-10 sm:h-12 flex items-center justify-center lg:justify-start">
                 <AnimatePresence mode="wait">
@@ -101,10 +102,10 @@ const Home = () => {
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Hola 👋, soy <strong className="text-gray-900 dark:text-white">Andrés Rojas</strong>. Transformo ideas complejas en experiencias web modernas, ultrarrápidas y visualmente deslumbrantes. Especializado en la pila MERN/PERN y arquitecturas escalables.
               </p>
-              
+
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-                <Link 
+                <Link
                   to="/projects"
                   className="relative group overflow-hidden inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-base shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-95 transition-all duration-300"
                 >
@@ -115,7 +116,7 @@ const Home = () => {
                   <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </Link>
 
-                <Link 
+                <Link
                   to="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-2xl glass-card font-bold text-base text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800/80 hover:border-blue-500/50 transition-all duration-300"
                 >
@@ -126,26 +127,26 @@ const Home = () => {
               {/* Social Links & Trust Badges */}
               <div className="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-6 border-t border-gray-200/60 dark:border-white/10 text-gray-500 dark:text-gray-400 text-sm">
                 <div className="flex items-center gap-4">
-                  <a 
-                    href="https://github.com/AndresRA13" 
-                    target="_blank" 
+                  <a
+                    href="https://github.com/AndresRA13"
+                    target="_blank"
                     rel="noreferrer"
                     className="p-3 rounded-xl glass-card text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-cyan-400 hover:scale-110 transition-all duration-300"
                     title="GitHub"
                   >
                     <Github size={20} />
                   </a>
-                  <a 
-                    href="#" 
-                    target="_blank" 
+                  <a
+                    href="https://www.linkedin.com/in/andres-rojas-466440299"
+                    target="_blank"
                     rel="noreferrer"
                     className="p-3 rounded-xl glass-card text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-cyan-400 hover:scale-110 transition-all duration-300"
                     title="LinkedIn"
                   >
                     <Linkedin size={20} />
                   </a>
-                  <a 
-                    href="mailto:rojasaguileraandres13@gmail.com" 
+                  <a
+                    href="mailto:rojasaguileraandres13@gmail.com"
                     className="p-3 rounded-xl glass-card text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-cyan-400 hover:scale-110 transition-all duration-300"
                     title="Email"
                   >
@@ -164,7 +165,7 @@ const Home = () => {
             </motion.div>
 
             {/* Right Column - Interactive Glass IDE & Profile Showcase */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -175,7 +176,7 @@ const Home = () => {
 
               {/* IDE Card Window */}
               <div className="relative glass-card rounded-3xl overflow-hidden shadow-2xl border border-white/20 dark:border-white/10">
-                
+
                 {/* Window Header / Tabs */}
                 <div className="px-5 py-3.5 bg-gray-100/80 dark:bg-[#0c101c]/90 border-b border-gray-200/80 dark:border-white/10 flex items-center justify-between">
                   <div className="flex items-center space-x-2">
@@ -188,13 +189,13 @@ const Home = () => {
                   </div>
 
                   <div className="flex items-center space-x-1 bg-gray-200/50 dark:bg-gray-800/60 p-1 rounded-lg text-xs font-medium">
-                    <button 
+                    <button
                       onClick={() => setActiveTab('code')}
                       className={`px-2.5 py-1 rounded-md transition-colors ${activeTab === 'code' ? 'bg-white dark:bg-gray-700 text-blue-600 dark:text-cyan-400 shadow-xs' : 'text-gray-500'}`}
                     >
                       Código
                     </button>
-                    <button 
+                    <button
                       onClick={() => setActiveTab('stats')}
                       className={`px-2.5 py-1 rounded-md transition-colors ${activeTab === 'stats' ? 'bg-white dark:bg-gray-700 text-blue-600 dark:text-cyan-400 shadow-xs' : 'text-gray-500'}`}
                     >
@@ -218,7 +219,7 @@ const Home = () => {
                         </div>
                         <div>
                           <span className="text-gray-500 dark:text-gray-400">role:</span>{' '}
-                          <span className="text-amber-600 dark:text-amber-300">'Full Stack Engineer'</span>,
+                          <span className="text-amber-600 dark:text-amber-300">'Full Stack Developer'</span>,
                         </div>
                         <div>
                           <span className="text-gray-500 dark:text-gray-400">location:</span>{' '}
@@ -274,7 +275,7 @@ const Home = () => {
               </div>
 
               {/* Floating Floating Badges */}
-              <motion.div 
+              <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl glass-card shadow-xl border border-white/20 dark:border-white/10 z-20"
@@ -288,7 +289,7 @@ const Home = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 animate={{ y: [5, -5, 5] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-6 -right-6 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl glass-card shadow-xl border border-white/20 dark:border-white/10 z-20"
@@ -315,11 +316,11 @@ const Home = () => {
             // Stack Tecnológico de Alto Nivel
           </p>
         </div>
-        
+
         <div className="relative flex overflow-x-hidden">
           <div className="py-2 animate-marquee whitespace-nowrap flex items-center gap-6">
             {[...techMarquee, ...techMarquee, ...techMarquee].map((tech, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass-card hover:scale-105 transition-transform duration-300 cursor-default border border-gray-200/60 dark:border-white/10 shadow-xs"
               >
@@ -345,9 +346,9 @@ const Home = () => {
               Comprometido con la excelencia técnica, entregas puntuales y un diseño visual que causa impacto desde el primer segundo.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div 
+            <motion.div
               whileHover={{ y: -8 }}
               className="p-8 rounded-3xl glass-card glass-card-hover border border-gray-200/80 dark:border-white/10 space-y-4"
             >
@@ -360,7 +361,7 @@ const Home = () => {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               whileHover={{ y: -8 }}
               className="p-8 rounded-3xl glass-card glass-card-hover border border-gray-200/80 dark:border-white/10 space-y-4"
             >
@@ -373,7 +374,7 @@ const Home = () => {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               whileHover={{ y: -8 }}
               className="p-8 rounded-3xl glass-card glass-card-hover border border-gray-200/80 dark:border-white/10 space-y-4"
             >

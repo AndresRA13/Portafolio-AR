@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Mail, Phone, MapPin, Send, CheckCircle2, Copy, Check, 
-  Github, Linkedin, Twitter, Sparkles, MessageSquare, Clock 
+import {
+  Mail, Phone, MapPin, Send, CheckCircle2, Copy, Check,
+  Github, Linkedin, Twitter, Sparkles, MessageSquare, Clock
 } from 'lucide-react';
 
 const Contact = () => {
@@ -55,7 +55,7 @@ const Contact = () => {
   return (
     <section className="min-h-screen py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Contact Information & Map */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -96,7 +96,7 @@ const Contact = () => {
 
             {/* Contact Cards */}
             <div className="space-y-4">
-              
+
               {/* Email Card */}
               <div className="p-4 rounded-2xl glass-card border border-gray-200/80 dark:border-white/10 flex items-center justify-between group">
                 <div className="flex items-center gap-4">
@@ -128,12 +128,12 @@ const Contact = () => {
                   <div>
                     <div className="text-[11px] font-mono font-bold uppercase text-gray-500 dark:text-gray-400">Teléfono / WhatsApp</div>
                     <a href="tel:+573138850922" className="text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-purple-500">
-                      +57 313 885 0922
+                      +57 316 059 2599
                     </a>
                   </div>
                 </div>
                 <button
-                  onClick={() => copyToClipboard('+573138850922', 'phone')}
+                  onClick={() => copyToClipboard('+573160592599', 'phone')}
                   className="p-2 rounded-lg hover:bg-gray-200/60 dark:hover:bg-gray-800 text-gray-500 hover:text-purple-500 transition-colors cursor-pointer"
                   title="Copiar teléfono"
                 >
@@ -158,13 +158,13 @@ const Contact = () => {
 
             {/* Google Map Box */}
             <div className="rounded-3xl overflow-hidden glass-card border border-gray-200/80 dark:border-white/10 shadow-lg h-64 relative">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15915.263592881!2d-75.43153595!3d4.4402682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c7f9df88f11d%3A0xc6ad50e263c965e6!2sCajamarca%2C%20Tolima!5e0!3m2!1ses!2sco!4v1707747300000!5m2!1ses!2sco" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen="" 
-                loading="lazy" 
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15915.263592881!2d-75.43153595!3d4.4402682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c7f9df88f11d%3A0xc6ad50e263c965e6!2sCajamarca%2C%20Tolima!5e0!3m2!1ses!2sco!4v1707747300000!5m2!1ses!2sco"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación Andrés Rojas"
                 className="grayscale dark:invert-[0.9] dark:hue-rotate-180 opacity-80 hover:opacity-100 transition-opacity duration-500"
@@ -258,9 +258,8 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className={`w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-base shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${
-                  status === 'submitting' ? 'opacity-75 cursor-not-allowed' : ''
-                }`}
+                className={`w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-base shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${status === 'submitting' ? 'opacity-75 cursor-not-allowed' : ''
+                  }`}
               >
                 {status === 'submitting' ? (
                   <span className="flex items-center gap-2 font-mono">

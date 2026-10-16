@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Code, Layout, Smartphone, Database, Globe, Shield, 
-  CheckCircle2, ArrowRight, Sparkles, Cpu, Zap 
+import {
+  Code, Layout, Smartphone, Database, Globe, Shield,
+  CheckCircle2, ArrowRight, Sparkles, Cpu, Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ const Services = () => {
       gradient: "from-blue-500 to-cyan-500",
       title: 'Desarrollo Frontend Moderno',
       description: 'Creación de interfaces responsivas, dinámicas y ultra rápidas utilizando React, Tailwind CSS y Framer Motion.',
-      features: ['SPA & SSR con Next.js/React', 'Diseño Responsive Mobile-First', 'Animaciones & Micro-interacciones', 'Accesibilidad Web (a11y)'],
+      features: ['SPA & PWA & React JS', 'Diseño Responsive Mobile-First', 'Animaciones & Micro-interacciones', 'Accesibilidad Web'],
     },
     {
       icon: <Database size={28} />,
@@ -55,7 +55,7 @@ const Services = () => {
   return (
     <section className="min-h-screen py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

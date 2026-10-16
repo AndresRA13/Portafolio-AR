@@ -37,7 +37,7 @@ const Loader = () => {
         className="flex items-center gap-2 font-mono text-xs font-bold tracking-widest text-blue-600 dark:text-cyan-400 uppercase"
       >
         <Sparkles size={14} className="animate-spin-slow" />
-        <span>Cargando Experiencia...</span>
+        <span>Cargando...</span>
       </motion.div>
     </div>
   );

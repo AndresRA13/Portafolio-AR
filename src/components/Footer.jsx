@@ -12,9 +12,9 @@ const Footer = () => {
   return (
     <footer className="relative z-10 pt-16 pb-8 border-t border-gray-200/80 dark:border-white/10 bg-white/40 dark:bg-[#090d16]/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-200/60 dark:border-white/10">
-          
+
           {/* Brand Info */}
           <div className="md:col-span-6 space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
@@ -31,25 +31,25 @@ const Footer = () => {
             </p>
 
             <div className="flex items-center gap-3 pt-2">
-              <a 
-                href="https://github.com/AndresRA13" 
-                target="_blank" 
+              <a
+                href="https://github.com/AndresRA13"
+                target="_blank"
                 rel="noreferrer"
                 className="p-2.5 rounded-xl glass-card text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-cyan-400 hover:scale-110 transition-all"
                 title="GitHub"
               >
                 <Github size={18} />
               </a>
-              <a 
-                href="#" 
-                target="_blank" 
+              <a
+                href="www.linkedin.com/in/andres-rojas-466440299"
+                target="_blank"
                 rel="noreferrer"
                 className="p-2.5 rounded-xl glass-card text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-cyan-400 hover:scale-110 transition-all"
                 title="LinkedIn"
               >
                 <Linkedin size={18} />
               </a>
-              <a 
+              <a
                 href="mailto:rojasaguileraandres13@gmail.com"
                 className="p-2.5 rounded-xl glass-card text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-cyan-400 hover:scale-110 transition-all"
                 title="Email"
@@ -112,7 +112,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1 font-medium">
-              Hecho con <Heart size={14} className="text-red-500 fill-red-500" /> en React & Tailwind
+              Arktech <Heart size={14} className="text-red-500 fill-red-500" /> Development
             </span>
 
             <button
