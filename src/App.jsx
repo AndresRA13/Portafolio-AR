@@ -50,17 +50,19 @@ const App = () => {
       <Router basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <BackgroundEffects />
-        {loading ? (
-          <Loader />
-        ) : (
-          <div className="min-h-screen bg-gray-50 dark:bg-[#090d16] text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans flex flex-col relative z-10">
-            <Navbar />
-            <main className="flex-grow">
-              <AnimatedRoutes />
-            </main>
-            <Footer />
-          </div>
-        )}
+        <AnimatePresence mode="wait">
+          {loading ? (
+            <Loader key="loader" />
+          ) : (
+            <div key="app" className="min-h-screen bg-gray-50 dark:bg-[#090d16] text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans flex flex-col relative z-10">
+              <Navbar />
+              <main className="flex-grow">
+                <AnimatedRoutes />
+              </main>
+              <Footer />
+            </div>
+          )}
+        </AnimatePresence>
       </Router>
     </ThemeProvider>
   );

@@ -163,6 +163,7 @@ body {
   }
 }
 
+
 /* Hide floating navbar completely when a modal dialog is open */
 body.modal-open header {
   opacity: 0 !important;
@@ -170,3 +171,28 @@ body.modal-open header {
   transform: translateY(-100%) !important;
   transition: opacity 0.25s ease, transform 0.25s ease !important;
 }
+
+/* ── Zigzag progress loader ─────────────────────────────────── */
+.ar-loader {
+  width: 160px;
+  height: 20px;
+  -webkit-mask:
+    conic-gradient(from 135deg at top,    #0000, #000 .5deg 90deg, #0000 90.5deg) 0 0,
+    conic-gradient(from -45deg at bottom, #0000, #000 .5deg 90deg, #0000 90.5deg) 0 100%;
+  -webkit-mask-size: 25% 50%;
+  -webkit-mask-repeat: repeat-x;
+  mask:
+    conic-gradient(from 135deg at top,    #0000, #000 .5deg 90deg, #0000 90.5deg) 0 0,
+    conic-gradient(from -45deg at bottom, #0000, #000 .5deg 90deg, #0000 90.5deg) 0 100%;
+  mask-size: 25% 50%;
+  mask-repeat: repeat-x;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4) left / 0% 100% no-repeat
+              rgba(255,255,255,0.08);
+  animation: ar-loader-fill 1.8s infinite linear;
+}
+
+@keyframes ar-loader-fill {
+  0%   { background-size: 0%   100%; }
+  100% { background-size: 100% 100%; }
+}
+
