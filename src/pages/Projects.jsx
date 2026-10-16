@@ -105,7 +105,7 @@ const projectsList = [
   },
   {
     id: 10,
-    title: 'PortFolio AR',
+    title: 'PortaFolio AR',
     category: 'Landing',
     image: 'https://i.postimg.cc/BZr1GqnJ/image.png',
     description: 'Portafolio Personal',
