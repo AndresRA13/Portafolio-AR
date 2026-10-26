@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Brand Info */}
           <div className="md:col-span-6 space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-sky-500 flex items-center justify-center text-white font-bold text-sm shadow-md">
                 AR
               </div>
               <span className="font-extrabold text-xl tracking-tight text-gray-900 dark:text-white">

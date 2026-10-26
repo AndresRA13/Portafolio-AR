@@ -214,7 +214,7 @@ const Projects = () => {
                   key={cat}
                   onClick={() => handleCategoryChange(cat)}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeCategory === cat
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md'
+                    ? 'bg-gradient-to-r from-blue-700 to-sky-500 text-white shadow-md'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                     }`}
                 >
@@ -362,7 +362,7 @@ const Projects = () => {
                   projectsRef.current?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className={`w-10 h-10 rounded-xl text-xs font-bold transition-all cursor-pointer ${currentPage === i + 1
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30'
+                  ? 'bg-gradient-to-r from-blue-700 to-sky-500 text-white shadow-lg shadow-blue-500/30'
                   : 'glass-card text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800'
                   }`}
               >
@@ -445,7 +445,7 @@ const Projects = () => {
                 {/* Technologies */}
                 <div className="space-y-3">
                   <h4 className="text-xs font-mono font-bold uppercase text-gray-500 dark:text-gray-400 tracking-wider flex items-center gap-2">
-                    <Code2 size={14} className="text-purple-500" />
+                    <Code2 size={14} className="text-sky-500" />
                     <span>Tecnologías Empleadas</span>
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -494,7 +494,7 @@ const Projects = () => {
                     href={selectedProject.demoLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-sm text-center shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2"
+                    className="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-700 via-blue-600 to-sky-500 text-white font-bold text-sm text-center shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2"
                   >
                     <Globe size={18} />
                     <span>Visitar Sitio Web (Demo)</span>

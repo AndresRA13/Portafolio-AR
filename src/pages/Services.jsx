@@ -24,7 +24,7 @@ const Services = () => {
     },
     {
       icon: <Smartphone size={28} />,
-      gradient: "from-purple-500 to-pink-500",
+      gradient: "from-sky-500 to-cyan-500",
       title: 'Aplicaciones Web Progresivas (PWA)',
       description: 'Transformación de aplicaciones web en experiencias instalables en iOS y Android con capacidad offline.',
       features: ['Soporte Offline & Service Workers', 'Instalación nativa en dispositivos', 'Sincronización en segundo plano', 'Notificaciones Push'],
@@ -38,7 +38,7 @@ const Services = () => {
     },
     {
       icon: <Code size={28} />,
-      gradient: "from-indigo-500 to-purple-600",
+      gradient: "from-blue-600 to-sky-500",
       title: 'Mantenimiento & Refactorización',
       description: 'Modernización de código heredado, corrección de errores, actualizaciones de seguridad y evolución de funciones.',
       features: ['Migración a tecnologías modernas', 'Auditoría de código y refactor', 'Soporte técnico continuo', 'Monitoreo de estabilidad'],
@@ -134,7 +134,7 @@ const Services = () => {
           className="relative rounded-3xl glass-card border border-white/20 dark:border-white/10 p-8 sm:p-12 overflow-hidden shadow-2xl text-center max-w-4xl mx-auto space-y-6"
         >
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-sky-500/20 rounded-full blur-3xl"></div>
 
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-cyan-400 text-xs font-bold font-mono tracking-wider uppercase border border-blue-500/20">
             <Sparkles size={14} /> ¿Tienes una idea en mente?
@@ -151,7 +151,7 @@ const Services = () => {
           <div>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-sm shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-95 transition-all gap-2"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-700 to-sky-500 text-white font-bold text-sm shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-95 transition-all gap-2"
             >
               <span>Solicitar Cotización</span>
               <ArrowRight size={16} />

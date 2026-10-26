@@ -46,7 +46,7 @@ const Loader = () => {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                           w-[500px] h-[500px] rounded-full
-                          bg-gradient-radial from-blue-600/10 via-purple-600/5 to-transparent
+                          bg-gradient-radial from-blue-600/10 via-sky-500/5 to-transparent
                           blur-3xl" />
         </div>
 
@@ -83,7 +83,7 @@ const Loader = () => {
             <defs>
               <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#3b82f6" />
-                <stop offset="50%" stopColor="#a855f7" />
+                <stop offset="50%" stopColor="#0ea5e9" />
                 <stop offset="100%" stopColor="#06b6d4" />
               </linearGradient>
             </defs>
@@ -92,10 +92,10 @@ const Loader = () => {
           {/* Centro: iniciales */}
           <motion.div
             className="relative z-10 w-20 h-20 rounded-2xl
-                       bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600
+                       bg-gradient-to-tr from-blue-700 via-blue-600 to-sky-500
                        flex items-center justify-center
                        shadow-2xl shadow-blue-600/40"
-            animate={{ scale: [1, 1.06, 1], boxShadow: ['0 0 30px rgba(59,130,246,0.35)', '0 0 50px rgba(139,92,246,0.5)', '0 0 30px rgba(59,130,246,0.35)'] }}
+            animate={{ scale: [1, 1.06, 1], boxShadow: ['0 0 30px rgba(37,99,235,0.35)', '0 0 50px rgba(14,165,233,0.5)', '0 0 30px rgba(37,99,235,0.35)'] }}
             transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
           >
             <span className="text-white font-extrabold text-2xl tracking-tight select-none">

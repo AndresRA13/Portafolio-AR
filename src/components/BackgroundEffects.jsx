@@ -16,7 +16,7 @@ const BackgroundEffects = () => {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Interactive Cursor Glow */}
       <div
-        className="hidden md:block absolute w-[500px] h-[500px] rounded-full opacity-30 dark:opacity-20 transition-transform duration-75 ease-out blur-[120px] bg-radial from-blue-500 via-purple-500 to-transparent"
+        className="hidden md:block absolute w-[500px] h-[500px] rounded-full opacity-30 dark:opacity-20 transition-transform duration-75 ease-out blur-[120px] bg-radial from-blue-500 via-sky-400 to-transparent"
         style={{
           transform: `translate(${mousePos.x - 250}px, ${mousePos.y - 250}px)`,
         }}
@@ -27,7 +27,7 @@ const BackgroundEffects = () => {
 
       {/* Animated Color Orbs */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-500/20 dark:bg-blue-600/15 rounded-full blur-[120px] animate-blob" />
-      <div className="absolute top-1/3 -right-40 w-96 h-96 bg-purple-500/20 dark:bg-purple-600/15 rounded-full blur-[120px] animate-blob animation-delay-2000" />
+      <div className="absolute top-1/3 -right-40 w-96 h-96 bg-sky-500/20 dark:bg-sky-600/15 rounded-full blur-[120px] animate-blob animation-delay-2000" />
       <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-cyan-500/15 dark:bg-cyan-600/10 rounded-full blur-[120px] animate-blob animation-delay-4000" />
     </div>
   );

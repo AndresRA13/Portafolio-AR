@@ -123,7 +123,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-20 space-y-4"
           >
-            <span className="px-4 py-1.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 text-xs font-bold font-mono tracking-wider uppercase border border-purple-500/20">
+            <span className="px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-cyan-400 text-xs font-bold font-mono tracking-wider uppercase border border-blue-500/20">
               Conoce mi historia
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-gray-900 dark:text-white">
@@ -148,11 +148,11 @@ const About = () => {
               <div className="relative rounded-3xl overflow-hidden glass-card p-8 border border-white/20 dark:border-white/10 shadow-2xl space-y-6">
 
                 {/* Profile Avatar Glow Box */}
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-600/20 via-indigo-600/30 to-purple-600/30 border border-white/10 flex flex-col items-center justify-center p-6 text-center">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-600/20 via-sky-500/20 to-cyan-500/20 border border-white/10 flex flex-col items-center justify-center p-6 text-center">
                   <motion.div
                     animate={{ rotate: [0, 5, -5, 0] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    className="w-24 h-24 rounded-3xl bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-white shadow-xl shadow-blue-500/30 mb-4"
+                    className="w-24 h-24 rounded-3xl bg-gradient-to-tr from-blue-700 to-sky-500 flex items-center justify-center text-white shadow-xl shadow-blue-500/30 mb-4"
                   >
                     <Code size={48} strokeWidth={1.8} />
                   </motion.div>
@@ -181,7 +181,7 @@ const About = () => {
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-gray-100/60 dark:bg-gray-800/40 border border-gray-200/50 dark:border-white/5 flex items-center gap-3">
-                    <MapPin className="text-purple-500 shrink-0" size={18} />
+                    <MapPin className="text-sky-500 shrink-0" size={18} />
                     <div>
                       <div className="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-semibold">Ubicación</div>
                       <div className="font-bold text-gray-800 dark:text-gray-200">Colombia</div>
@@ -209,7 +209,7 @@ const About = () => {
                 <div className="pt-2">
                   <Link
                     to="/contact"
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-center text-sm shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-700 to-sky-500 text-white font-bold text-center text-sm shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2"
                   >
                     <Sparkles size={16} />
                     <span>Iniciar un Proyecto</span>
@@ -286,7 +286,7 @@ const About = () => {
                 >
                   {/* Timeline Dot Indicator */}
                   <div className={`absolute -left-[31px] top-1.5 w-5 h-5 rounded-full ring-4 ring-white dark:ring-[#090d16] group-hover:scale-125 transition-all duration-300 ${item.type === 'work' ? 'bg-emerald-500 group-hover:bg-emerald-400' :
-                    item.type === 'education' ? 'bg-purple-600 group-hover:bg-purple-400' :
+                    item.type === 'education' ? 'bg-sky-600 group-hover:bg-sky-400' :
                       'bg-blue-600 group-hover:bg-cyan-400'
                     }`}></div>
 
@@ -294,7 +294,7 @@ const About = () => {
                     {/* Header row */}
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className={`px-3 py-1 rounded-full font-mono text-xs font-bold border ${item.type === 'work' ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20' :
-                        item.type === 'education' ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20' :
+                        item.type === 'education' ? 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20' :
                           'bg-blue-500/10 text-blue-600 dark:text-cyan-400 border-blue-500/20'
                         }`}>
                         {item.period}
@@ -306,7 +306,7 @@ const About = () => {
                           </span>
                         )}
                         {item.type === 'education' && (
-                          <span className="px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[10px] font-bold border border-purple-500/20 uppercase tracking-wide flex items-center gap-1">
+                          <span className="px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 text-[10px] font-bold border border-sky-500/20 uppercase tracking-wide flex items-center gap-1">
                             <GraduationCap size={10} /> Educación
                           </span>
                         )}

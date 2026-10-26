@@ -41,7 +41,7 @@ const categories = [
     id: 'tools',
     title: 'Herramientas & DevOps',
     icon: <Wrench size={20} />,
-    gradient: 'from-purple-500 to-pink-500',
+    gradient: 'from-sky-500 to-blue-600',
     skills: [
       { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
       { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
@@ -175,7 +175,7 @@ const Skills = () => (
               className="p-6 rounded-2xl glass-card border border-gray-200/80 dark:border-white/10
                          flex items-start gap-4 hover:border-blue-500/40 transition-all"
             >
-              <div className="p-3 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 text-white shadow-md shrink-0">
+              <div className="p-3 rounded-xl bg-gradient-to-tr from-blue-700 to-sky-500 text-white shadow-md shrink-0">
                 {skill.icon}
               </div>
               <div>

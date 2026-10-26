@@ -16,7 +16,7 @@ const NotFound = () => {
             rotate: { duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
             opacity: { duration: 0.5 }
           }}
-          className="inline-block p-6 rounded-3xl bg-gradient-to-tr from-blue-600 to-purple-600 text-white shadow-xl shadow-blue-500/30"
+          className="inline-block p-6 rounded-3xl bg-gradient-to-tr from-blue-600 to-sky-500 text-white shadow-xl shadow-blue-500/30"
         >
           <Compass size={56} strokeWidth={1.8} />
         </motion.div>
@@ -45,7 +45,7 @@ const NotFound = () => {
         <div>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-sm shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-95 transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-sky-500 text-white font-bold text-sm shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-95 transition-all"
           >
             <ArrowLeft size={16} />
             <span>Volver al Inicio</span>

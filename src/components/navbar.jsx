@@ -40,7 +40,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 group-hover:shadow-blue-500/40 transition-all duration-300">
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-sky-500 text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 group-hover:shadow-blue-500/40 transition-all duration-300">
               <Code size={20} className="group-hover:rotate-12 transition-transform duration-300" />
               <span className="absolute -top-1 -right-1 flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -72,7 +72,7 @@ const Navbar = () => {
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="active-pill"
-                    className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full shadow-md shadow-blue-500/30"
+                    className="absolute inset-0 bg-gradient-to-r from-blue-600 to-sky-500 rounded-full shadow-md shadow-blue-500/30"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -93,7 +93,7 @@ const Navbar = () => {
 
             <Link
               to="/contact"
-              className="relative group overflow-hidden px-5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-sm shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center gap-2"
+              className="relative group overflow-hidden px-5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-sky-500 text-white font-semibold text-sm shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center gap-2"
             >
               <Sparkles size={16} className="animate-spin-slow" />
               <span>Contratar</span>
@@ -140,7 +140,7 @@ const Navbar = () => {
             >
               <div className="flex items-center justify-between pb-6 border-b border-gray-200 dark:border-gray-800">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-sky-500 flex items-center justify-center text-white font-bold text-sm">
                     AR
                   </div>
                   <span className="font-bold text-gray-900 dark:text-white">Menú</span>
@@ -178,7 +178,7 @@ const Navbar = () => {
                   <Link
                     to="/contact"
                     onClick={() => setIsOpen(false)}
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-center shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
+                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-sky-500 text-white font-bold text-center shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
                   >
                     <Send size={18} />
                     Contáctame

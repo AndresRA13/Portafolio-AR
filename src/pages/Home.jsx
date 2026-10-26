@@ -28,7 +28,7 @@ const techMarquee = [
   { name: "MySQL", color: "from-gray-700 to-black dark:from-gray-200 dark:to-white" },
   { name: "MongoDB", color: "from-green-500 to-emerald-700" },
   { name: "Firebase", color: "from-amber-400 to-orange-500" },
-  { name: "Git", color: "from-purple-500 to-pink-500" },
+  { name: "Git", color: "from-blue-400 to-cyan-500" },
   { name: "Github", color: "from-gray-600 to-gray-800" },
   { name: "Express.js", color: "from-gray-600 to-gray-800" },
 ];
@@ -91,7 +91,7 @@ const Home = () => {
                     transition={{ duration: 0.4 }}
                     className="inline-flex items-center gap-2 text-xl sm:text-2xl font-mono font-bold text-blue-600 dark:text-cyan-400"
                   >
-                    <Terminal size={22} className="text-purple-500" />
+                    <Terminal size={22} className="text-sky-500" />
                     <span>&gt; {roles[roleIndex]}</span>
                     <span className="animate-pulse">_</span>
                   </motion.div>
@@ -107,7 +107,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                 <Link
                   to="/projects"
-                  className="relative group overflow-hidden inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold text-base shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-95 transition-all duration-300"
+                  className="relative group overflow-hidden inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-sky-500 text-white font-bold text-base shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-95 transition-all duration-300"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Explorar Proyectos
@@ -172,7 +172,7 @@ const Home = () => {
               className="lg:col-span-5 relative"
             >
               {/* Outer Glow Halo */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-3xl opacity-25 blur-3xl animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-700 to-sky-500 rounded-3xl opacity-25 blur-3xl animate-pulse"></div>
 
               {/* IDE Card Window */}
               <div className="relative glass-card rounded-3xl overflow-hidden shadow-2xl border border-white/20 dark:border-white/10">
@@ -209,7 +209,7 @@ const Home = () => {
                   {activeTab === 'code' ? (
                     <div className="space-y-3 leading-relaxed">
                       <div>
-                        <span className="text-purple-600 dark:text-purple-400">const</span>{' '}
+                        <span className="text-sky-600 dark:text-sky-400">const</span>{' '}
                         <span className="text-blue-600 dark:text-cyan-300 font-bold">developer</span> = &#123;
                       </div>
                       <div className="pl-4 space-y-1">
@@ -233,7 +233,7 @@ const Home = () => {
                         </div>
                         <div>
                           <span className="text-gray-500 dark:text-gray-400">passion:</span>{' '}
-                          <span className="text-purple-600 dark:text-purple-300">'Clean code & WOW UI'</span>,
+                          <span className="text-sky-600 dark:text-sky-300">'Clean code & WOW UI'</span>,
                         </div>
                         <div>
                           <span className="text-gray-500 dark:text-gray-400">status:</span>{' '}
@@ -248,8 +248,8 @@ const Home = () => {
                         <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">100%</div>
                         <div className="text-[11px] text-gray-500 dark:text-gray-400 uppercase font-semibold">Lighthouse Score</div>
                       </div>
-                      <div className="p-4 rounded-xl bg-purple-500/10 border border-purple-500/20 text-center">
-                        <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">7+</div>
+                      <div className="p-4 rounded-xl bg-sky-500/10 border border-sky-500/20 text-center">
+                        <div className="text-2xl font-bold text-sky-600 dark:text-sky-400">7+</div>
                         <div className="text-[11px] text-gray-500 dark:text-gray-400 uppercase font-semibold">Proyectos Activos</div>
                       </div>
                       <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-center">
@@ -294,7 +294,7 @@ const Home = () => {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-6 -right-6 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl glass-card shadow-xl border border-white/20 dark:border-white/10 z-20"
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white">
                   <Sparkles size={20} />
                 </div>
                 <div>
@@ -365,7 +365,7 @@ const Home = () => {
               whileHover={{ y: -8 }}
               className="p-8 rounded-3xl glass-card glass-card-hover border border-gray-200/80 dark:border-white/10 space-y-4"
             >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-purple-500/30">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
                 <Layers size={28} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Diseño WOW UI/UX</h3>
