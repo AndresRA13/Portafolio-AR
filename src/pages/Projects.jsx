@@ -19,7 +19,7 @@ const projectsList = [
     id: 6,
     title: 'Moto Fix',
     category: 'Full Stack',
-    image: 'https://i.postimg.cc/HLGsJ4ZF/image.png',
+    image: 'https://i.postimg.cc/9XBF2dJs/image.png',
     description: 'Software PWA para taller de motos, con inventario, ventas con factura, capacidad de administrar ordenes de trabajo, mecanicos, reportes y estadistica de clientes.',
     technologies: ['HTML', 'CSS', 'Javascript', 'Firebase DB', 'PWA ServiceWorker'],
     demoLink: 'https://potter-motos.netlify.app/',
